@@ -67,27 +67,23 @@ plt.show()
 '''
 
 N = 55 #num of months
-men_means = (20, 35, 30, 35, 27)
-#men_std = (2, 3, 4, 1, 2)
+ind = np.arange(N) # the x locations for the groups
+width = 0.35 # the width of the bars
 
-ind = np.arange(N)  # the x locations for the groups
-width = 0.25      # the width of the bars
+total_in_millions = total.apply(lambda x: x / 1000)
 
 fig, ax = plt.subplots()
-rects1 = ax.bar(y_pos, total, width, color='r')#, yerr=men_std)
-
-women_means = (25, 32, 34, 20, 25)
-#women_std = (3, 5, 2, 3, 3)
-rects2 = ax.bar(y_pos + width, helsinki_temp, width, color='b')#, yerr=women_std)
+rects1 = ax.bar(y_pos, total_in_millions, width, color='tab:blue')
+rects2 = ax.bar(y_pos + width, helsinki_temp, width, color='tab:orange')
 
 # add some text for labels, title and axes ticks
-#ax.set_ylabel('Scores')
-#ax.set_title('Scores by group and gender')
+ax.set_title('Total alcohol sold and average celcius degrees per month')
+ax.set_ylabel('Alcohol total divided by 1000 and average celcius')
+#ax.set_xlabel('Months of years')
 ax.set_xticks(ind + width / 2)
 ax.set_xticklabels(graph_months)
 
-ax.legend((rects1[0], rects2[0]), ('Total', 'Temp'))
-
+ax.legend((rects1[0], rects2[0]), ('Total in units of 1000 litres', 'Average temperature'))
 
 def autolabel(rects):
     """
@@ -96,10 +92,10 @@ def autolabel(rects):
     for rect in rects:
         height = rect.get_height()
         ax.text(rect.get_x() + rect.get_width()/2., 1.05*height,
-                '%d' % int(height),
-                ha='center', va='bottom')
+                '%d' % int(height*1000),
+                ha='center', va='bottom', size=8, rotation=90)
 
 autolabel(rects1)
-autolabel(rects2)
 
+#The plot is a bit overcrowded at the moment => let's fix this
 plt.show()
