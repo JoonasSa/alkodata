@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+from graph_utils import create_two_bar_graph, dataframe_mean
 
 #Alko data
 alko_df = pd.read_csv("alko_sales.csv")
@@ -30,12 +30,18 @@ weather_df = pd.read_csv("weather_stat.csv")
 #Invert and assign all weather statistic columns to a variable for easy access
 helsinki_temp = weather_df['Helsinki_temp'].iloc[::-1]
 helsinki_rain = weather_df['Helsinki_rain'].iloc[::-1]
-jyvaskyla_temp = weather_df['Jyvaskyla_rain'].iloc[::-1]
-jyvaskyla_rain = weather_df['Jyvaskyla_temp'].iloc[::-1]
+jyvaskyla_temp = weather_df['Jyvaskyla_temp'].iloc[::-1]
+jyvaskyla_rain = weather_df['Jyvaskyla_rain'].iloc[::-1]
 sodankyla_temp = weather_df['Sodankyla_temp'].iloc[::-1]
 sodankyla_rain = weather_df['Sodankyla_rain'].iloc[::-1]
 seinajoki_temp = weather_df['Seinajoki_temp'].iloc[::-1]
 seinajoki_rain = weather_df['Seinajoki_rain'].iloc[::-1]
+
+#Average temp and rain per month in Finland
+finland_temp = dataframe_mean([helsinki_temp, jyvaskyla_temp, sodankyla_temp, seinajoki_temp])
+finland_temp = finland_temp[0].iloc[::-1]
+finland_rain = dataframe_mean([helsinki_rain, jyvaskyla_rain, sodankyla_rain, seinajoki_rain])
+finland_rain = finland_rain[0].iloc[::-1]
 
 #Create a month of year x-axis
 graph_months = (month.apply(lambda x: x[:2]))
@@ -44,7 +50,13 @@ graph_months[44] = graph_months[44] + "\n2014"
 graph_months[32] = graph_months[32] + "\n2015"
 graph_months[20] = graph_months[20] + "\n2016"
 graph_months[8] = graph_months[8] + "\n2017"
-y_pos = np.arange(len(graph_months))
+x_pos = np.arange(len(graph_months))
+
+#Graph total alcohol sold and average temperature in Helsinki
+create_two_bar_graph(total.apply(lambda x: x / 1000), finland_temp, x_pos, x_tick_labels=graph_months,
+                     title='Total alcohol sold and average celcius degrees per month',
+                     y_label='1000000 litres of alcohol sold and average celcius',
+                     a_legend="1000 litres of alcohol sold", b_legend="Average temperature", autolabel1=True)
 
 '''
 #Plot vodka sales per month
@@ -65,37 +77,3 @@ plt.title('Average temperature in Helsinki per month')
 
 plt.show()
 '''
-
-N = 55 #num of months
-ind = np.arange(N) # the x locations for the groups
-width = 0.35 # the width of the bars
-
-total_in_millions = total.apply(lambda x: x / 1000)
-
-fig, ax = plt.subplots()
-rects1 = ax.bar(y_pos, total_in_millions, width, color='tab:blue')
-rects2 = ax.bar(y_pos + width, helsinki_temp, width, color='tab:orange')
-
-# add some text for labels, title and axes ticks
-ax.set_title('Total alcohol sold and average celcius degrees per month')
-ax.set_ylabel('Alcohol total divided by 1000 and average celcius')
-#ax.set_xlabel('Months of years')
-ax.set_xticks(ind + width / 2)
-ax.set_xticklabels(graph_months)
-
-ax.legend((rects1[0], rects2[0]), ('Total in units of 1000 litres', 'Average temperature'))
-
-def autolabel(rects):
-    """
-    Attach a text label above each bar displaying its height
-    """
-    for rect in rects:
-        height = rect.get_height()
-        ax.text(rect.get_x() + rect.get_width()/2., 1.05*height,
-                '%d' % int(height*1000),
-                ha='center', va='bottom', size=8, rotation=90)
-
-autolabel(rects1)
-
-#The plot is a bit overcrowded at the moment => let's fix this
-plt.show()
