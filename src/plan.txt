@@ -1,3 +1,11 @@
+Arivoidaan:
+- pitch (tulos, järkevä jne)
+- lisäarvoa
+- vaiva
+- idea (aihe)
+- hyöty => voiko hyödyntää
+- "blog post" raportti
+
 - Skumppa käyrä
 - Viini käyrä
 - Mieto käyrä
@@ -14,3 +22,4 @@ Analysointi:
 - Juhannus: Eri tuotteet ja sää
 - Yleisilme neljännesvuosista (yritetään vähentää juhlapyhien vaikutusta)
 - Datan luotettavuuden määrittely ja ongelmien esiintuonti
+- Miksi tulokset on uskottavat
