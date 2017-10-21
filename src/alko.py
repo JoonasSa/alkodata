@@ -51,22 +51,30 @@ graph_months[32] = graph_months[32] + "\n2015"
 graph_months[20] = graph_months[20] + "\n2016"
 graph_months[8] = graph_months[8] + "\n2017"
 x_pos = np.arange(len(graph_months))
+rain_x_pos = np.arange(31,55)
 
-
-#Graph total alcohol sold and average temperature in Finland
+#Graph of total alcohol sold and average temperature in Finland
 create_two_bar_graph(total.apply(lambda x: x / 1000), finland_temp, x_pos, x_tick_labels=graph_months,
                      title='Total alcohol sold and average celcius degrees per month',
                      y_label='1000000 litres of alcohol sold and average celcius',
                      a_legend="1000 litres of alcohol sold", b_legend="Average temperature", autolabel1=True)
 
-#Graph vodka and spirits sold and average temperature in Finland
+#Graph of total alcohol sold and average temperature and rain in Finland from 10/2015 (index 31) onward
+create_two_bar_graph(total[31:].apply(lambda x: x / 1000), finland_temp[31:], rain_x_pos,
+                     x_tick_labels=graph_months[31:], c=finland_rain[31:].apply(lambda x: x / 10), tick_num=24,
+                     title='Total alcohol sold, average celcius degrees and cl rain per month',
+                     y_label='1000000 l of alcohol sold and average celcius and cl rain',
+                     a_legend="1000 litres of alcohol sold", b_legend="Average temperature in celcius",
+                     c_legend="Average rain in cl", autolabel1=True)
+
+#Graph of vodka and spirits sold and average temperature in Finland
 create_two_bar_graph(vodka_spirit.apply(lambda x: x / 100), finland_temp, x_pos, x_tick_labels=graph_months,
                      title='Vodka and spirits sold and average celcius degrees per month',
                      y_label='100000 litres of vodka and spirits sold and average celcius',
                      a_legend="100000 litres of vodka and spirits sold", b_legend="Average temperature")
 #=> The sales spike during christmas and new years eve. Otherwise they are rather constant
 
-#Graph sparkling wines sold and average temperature in Finland
+#Graph of sparkling wines sold and average temperature in Finland
 create_two_bar_graph(sparkling_wine.apply(lambda x: x / 100), finland_temp, x_pos, x_tick_labels=graph_months,
                      title='Sparkling wines sold and average celcius degrees per month',
                      y_label='100000 litres of sparkling wine sold and average celcius',
