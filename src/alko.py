@@ -39,9 +39,9 @@ seinajoki_rain = weather_df['Seinajoki_rain'].iloc[::-1]
 
 #Average temp and rain per month in Finland
 finland_temp = dataframe_mean([helsinki_temp, jyvaskyla_temp, sodankyla_temp, seinajoki_temp])
-finland_temp = finland_temp[0].iloc[::-1]
+finland_temp = finland_temp[0]
 finland_rain = dataframe_mean([helsinki_rain, jyvaskyla_rain, sodankyla_rain, seinajoki_rain])
-finland_rain = finland_rain[0].iloc[::-1]
+finland_rain = finland_rain[0]
 
 #Create a month of year x-axis
 graph_months = (month.apply(lambda x: x[:2]))
@@ -52,28 +52,23 @@ graph_months[20] = graph_months[20] + "\n2016"
 graph_months[8] = graph_months[8] + "\n2017"
 x_pos = np.arange(len(graph_months))
 
-#Graph total alcohol sold and average temperature in Helsinki
+
+#Graph total alcohol sold and average temperature in Finland
 create_two_bar_graph(total.apply(lambda x: x / 1000), finland_temp, x_pos, x_tick_labels=graph_months,
                      title='Total alcohol sold and average celcius degrees per month',
                      y_label='1000000 litres of alcohol sold and average celcius',
                      a_legend="1000 litres of alcohol sold", b_legend="Average temperature", autolabel1=True)
 
-'''
-#Plot vodka sales per month
-plt.bar(y_pos, vodka_spirit, align='center', alpha=0.5)
-plt.xticks(y_pos, graph_months)
-plt.ylabel('1000 litres of vodka and spirits sold')
-plt.xlabel('Year and month')
-plt.title('Vodka and spirit sales in thousand litres per month')
+#Graph vodka and spirits sold and average temperature in Finland
+create_two_bar_graph(vodka_spirit.apply(lambda x: x / 100), finland_temp, x_pos, x_tick_labels=graph_months,
+                     title='Vodka and spirits sold and average celcius degrees per month',
+                     y_label='100000 litres of vodka and spirits sold and average celcius',
+                     a_legend="100000 litres of vodka and spirits sold", b_legend="Average temperature")
+#=> The sales spike during christmas and new years eve. Otherwise they are rather constant
 
-plt.show()
-
-#Plot temperature per month in Helsinki
-plt.bar(y_pos, helsinki_temp, align='center', alpha=0.5)
-plt.xticks(y_pos, graph_months)
-plt.ylabel('Average celsius in Helsinki')
-plt.xlabel('Year and month')
-plt.title('Average temperature in Helsinki per month')
-
-plt.show()
-'''
+#Graph sparkling wines sold and average temperature in Finland
+create_two_bar_graph(sparkling_wine.apply(lambda x: x / 100), finland_temp, x_pos, x_tick_labels=graph_months,
+                     title='Sparkling wines sold and average celcius degrees per month',
+                     y_label='100000 litres of sparkling wine sold and average celcius',
+                     a_legend="100000 litres of sparkling wine sold", b_legend="Average temperature")
+#=> 09/2015 big spike? Other than that christmas season and may day seem to be the time of the year with heightened sales

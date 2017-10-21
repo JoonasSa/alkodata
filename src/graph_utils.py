@@ -11,7 +11,7 @@ def create_two_bar_graph(a, b, x_pos, x_tick_labels="", title="", x_label="", y_
     fig, ax = plt.subplots()
     rects1 = ax.bar(x_pos, a, bar_width, color='tab:blue')
     rects2 = ax.bar(x_pos + bar_width, b, bar_width, color='tab:orange')
-    print(b)
+
     # add some text for labels, title and axes ticks
     ax.set_title(title)
     ax.set_ylabel(y_label)
