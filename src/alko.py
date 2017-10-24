@@ -80,3 +80,14 @@ create_two_bar_graph(sparkling_wine.apply(lambda x: x / 100), finland_temp, x_po
                      y_label='100000 litres of sparkling wine sold and average celcius',
                      a_legend="100000 litres of sparkling wine sold", b_legend="Average temperature")
 #=> 09/2015 big spike? Other than that christmas season and may day seem to be the time of the year with heightened sales
+
+beer_and_cider=beer
+beer_and_cider.add(cider, fill_value=0)
+
+
+#Graph of beer and ciders sold and average temperature in Finland
+create_two_bar_graph(beer_and_cider.apply(lambda x: x / 100), finland_temp, x_pos, x_tick_labels=graph_months,
+                     title='Beer and cider sold and average celcius degrees per month',
+                     y_label='100000 litres of beer and cider sold and average celcius',
+                     a_legend="100000 litres of beer and cider sold", b_legend="Average temperature")
+#=> The sales spike during christmas and new years eve. Otherwise they are rather constant
