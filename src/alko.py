@@ -60,12 +60,14 @@ create_two_bar_graph(total.apply(lambda x: x / 1000), finland_temp, x_pos, x_tic
                      a_legend="1000 litres of alcohol sold", b_legend="Average temperature", autolabel1=True)
 
 #Graph of total alcohol sold and average temperature and rain in Finland from 10/2015 (index 31) onward
+months_ = x_tick_labels = graph_months[31:]
 create_two_bar_graph(total[31:].apply(lambda x: x / 1000), finland_temp[31:], rain_x_pos,
-                     x_tick_labels=graph_months[31:], c=finland_rain[31:].apply(lambda x: x / 10), tick_num=24,
+                     x_tick_labels=graph_months,
                      title='Total alcohol sold, average celcius degrees and cl rain per month',
-                     y_label='1000000 l of alcohol sold and average celcius and cl rain',
+                     y_label='1000000 l of alcohol sold and average celcius and cl rain', c=finland_rain[31:].apply(lambda x: x / 10),
+
                      a_legend="1000 litres of alcohol sold", b_legend="Average temperature in celcius",
-                     c_legend="Average rain in cl", autolabel1=True)
+                     c_legend="Average rain in cl", autoextemporelabel1=True)
 
 #Graph of vodka and spirits sold and average temperature in Finland
 create_two_bar_graph(vodka_spirit.apply(lambda x: x / 100), finland_temp, x_pos, x_tick_labels=graph_months,
