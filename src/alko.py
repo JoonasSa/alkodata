@@ -117,15 +117,14 @@ create_two_bar_graph(pure_alcohol_total.apply(lambda x: x / 100), finland_temp, 
                      title='Pure alcohol total sold and average celcius degrees per month',
                      y_label='100000 litres of pure alcohol total sold and average celcius',
                      a_legend="100000 litres of pure alcohol total sold", b_legend="Average temperature")
-'''
+
 all_wines=red_wine
-all_wines.add(white_wine,fill_value=0)
-all_wines.add(sparkling_wine,fill_value=0)
-all_wines.add(rose_wine,fill_value=0)
-all_wines.add(other_wine,fill_value=0)
+all_wines=all_wines.add(white_wine,fill_value=0)
+all_wines=all_wines.add(sparkling_wine,fill_value=0)
+all_wines=all_wines.add(rose_wine,fill_value=0)
+all_wines=all_wines.add(other_wine,fill_value=0)
 
 
-Ei toimi vielä yhyy
 
 #Graph of all wines total sold and average temperature in Finland 
 create_two_bar_graph(all_wines.apply(lambda x: x / 100), finland_temp, x_pos, x_tick_labels=graph_months,
@@ -133,6 +132,6 @@ create_two_bar_graph(all_wines.apply(lambda x: x / 100), finland_temp, x_pos, x_
                      y_label='100000 litres of all wines total sold and average celcius',
                      a_legend="100000 litres of all wines total sold", b_legend="Average temperature")
 
-'''
+
 
 
