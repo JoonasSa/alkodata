@@ -53,67 +53,70 @@ graph_months[8] = graph_months[8] + "\n2017"
 x_pos = np.arange(len(graph_months))
 rain_x_pos = np.arange(31,55)
 
+celsius_string = "$^\circ$C"
+
 #Graph of total alcohol sold and average temperature in Finland
 create_two_bar_graph(total.apply(lambda x: x / 1000), finland_temp, x_pos, x_tick_labels=graph_months,
-                     title='Total alcohol sold and average celcius degrees per month',
-                     y_label='1000000 litres of alcohol sold and average celcius',
-                     a_legend="1000 litres of alcohol sold", b_legend="Average temperature", autolabel1=True)
+                     title='Total alcohol sold and average temperature per month',
+                     #y_label='1000000 litres of alcohol sold and average celcius',
+                     a_legend="1000000 l of alcohol sold", b_legend="Average temperature in " + celsius_string, autolabel1=True, autolabel1decimal=True)
 
 #Graph of total alcohol sold and average temperature and rain in Finland from 10/2015 (index 31) onward
-months_ = x_tick_labels = graph_months[31:]
+#months_ = x_tick_labels = graph_months[31:]
 create_two_bar_graph(total[31:].apply(lambda x: x / 1000), finland_temp[31:], rain_x_pos,
                      x_tick_labels=graph_months,
-                     title='Total alcohol sold, average celcius degrees and cl rain per month',
-                     y_label='1000000 l of alcohol sold and average celcius and cl rain', c=finland_rain[31:].apply(lambda x: x / 10),
-                     a_legend="1000 litres of alcohol sold", b_legend="Average temperature in celcius",
-                     c_legend="Average rain in cl", autolabel1=True)
+                     title='Total alcohol sold, average temperature and rain per month',
+                     #y_label='1000000 l of alcohol sold and average celcius and cl rain',
+                     c=finland_rain[31:].apply(lambda x: x / 10),
+                     a_legend="1000000 l of alcohol sold", b_legend="Average temperature in " + celsius_string,
+                     c_legend="Average rain in cl", autolabel1=True, autolabel1decimal=True)
 
 #Graph of vodka and spirits sold and average temperature in Finland
 create_two_bar_graph(vodka_spirit.apply(lambda x: x / 100), finland_temp, x_pos, x_tick_labels=graph_months,
-                     title='Vodka and spirits sold and average celcius degrees per month',
-                     y_label='100000 litres of vodka and spirits sold and average celcius',
-                     a_legend="100000 litres of vodka and spirits sold", b_legend="Average temperature")
+                     title='Vodka and spirits sold and average temperature per month',
+                     #y_label='100000 litres of vodka and spirits sold and average celcius',
+                     a_legend="100000 l of vodka and spirits sold", b_legend="Average temperature in " + celsius_string)
 #=> The sales spike during christmas and new years eve. Otherwise they are rather constant
 
 #Graph of sparkling wines sold and average temperature in Finland
 create_two_bar_graph(sparkling_wine.apply(lambda x: x / 100), finland_temp, x_pos, x_tick_labels=graph_months,
-                     title='Sparkling wines sold and average celcius degrees per month',
-                     y_label='100000 litres of sparkling wine sold and average celcius',
-                     a_legend="100000 litres of sparkling wine sold", b_legend="Average temperature")
+                     title='Sparkling wines sold and average temperature per month',
+                     #y_label='100000 litres of sparkling wine sold and average celcius',
+                     a_legend="100000 l of sparkling wine sold", b_legend="Average temperature in " + celsius_string)
 #=> 09/2015 big spike? Other than that christmas season and may day seem to be the time of the year with heightened sales
 
 #Graph of Beer sold and average temperature in Finland
 create_two_bar_graph(beer[31:].apply(lambda x: x / 100), finland_temp[31:], rain_x_pos, x_tick_labels=graph_months,
-                     title='Beer sold and average celcius degrees per month',
-                     y_label='100000 litres of Beer sold and average celcius',c=finland_rain[31:].apply(lambda x: x / 10),
-                     a_legend="100000 litres of beer sold", b_legend="Average temperature")
+                     title='Beer sold and average temperature per month',
+                     #y_label='100000 l of Beer sold and average celcius',c=finland_rain[31:].apply(lambda x: x / 10),
+                     a_legend="100000 l of beer sold", b_legend="Average temperature in " + celsius_string)
 
 #Graph of red wine sold and average temperature in Finland
 create_two_bar_graph(red_wine[31:].apply(lambda x: x / 100), finland_temp[31:], rain_x_pos, x_tick_labels=graph_months,
-                     title='Red wines sold and average celcius degrees per month',
-                     y_label='100000 litres of red wine sold and average celcius',c=finland_rain[31:].apply(lambda x: x / 10),
-                     a_legend="100000 litres of red wine sold", b_legend="Average temperature")
+                     title='Red wines sold and average temperature per month',
+                     #y_label='100000 litres of red wine sold and average celcius',c=finland_rain[31:].apply(lambda x: x / 10),
+                     a_legend="100000 l of red wine sold", b_legend="Average temperature in " + celsius_string)
 
 #Graph of white wine sold and average temperature in Finland
 create_two_bar_graph(white_wine[31:].apply(lambda x: x / 100), finland_temp[31:], rain_x_pos, x_tick_labels=graph_months,
-                     title='White wines sold and average celcius degrees per month',
-                     y_label='100000 litres of white wine sold and average celcius',  c=finland_rain[31:].apply(lambda x: x / 10),
-                     a_legend="100000 litres of white wine sold", b_legend="Average temperature")
+                     title='White wines sold and average temperature per month',
+                     #y_label='100000 litres of white wine sold and average celcius',  c=finland_rain[31:].apply(lambda x: x / 10),
+                     a_legend="100000 l of white wine sold", b_legend="Average temperature in " + celsius_string)
 
 beer_and_cider=beer
 beer_and_cider.add(cider, fill_value=0)
 
 #Graph of beer and ciders sold and average temperature in Finland
 create_two_bar_graph(beer_and_cider.apply(lambda x: x / 100), finland_temp, x_pos, x_tick_labels=graph_months,
-                     title='Beer and cider sold and average celcius degrees per month',
-                     y_label='100000 litres of beer and cider sold and average celcius',
-                     a_legend="100000 litres of beer and cider sold", b_legend="Average temperature")
+                     title='Beer and cider sold and average temperature per month',
+                     #y_label='100000 litres of beer and cider sold and average celcius',
+                     a_legend="100000 l of beer and cider sold", b_legend="Average temperature in " + celsius_string)
 
 #Graph of pure alcohol total sold and average temperature in Finland
 create_two_bar_graph(pure_alcohol_total.apply(lambda x: x / 100), finland_temp, x_pos, x_tick_labels=graph_months,
-                     title='Pure alcohol total sold and average celcius degrees per month',
-                     y_label='100000 litres of pure alcohol total sold and average celcius',
-                     a_legend="100000 litres of pure alcohol total sold", b_legend="Average temperature")
+                     title='Pure alcohol total sold and average temperature per month',
+                     #y_label='100000 litres of pure alcohol total sold and average celcius',
+                     a_legend="100000 l of pure alcohol total sold", b_legend="Average temperature in " + celsius_string)
 
 all_wines=red_wine
 all_wines=all_wines.add(white_wine,fill_value=0)
@@ -123,8 +126,8 @@ all_wines=all_wines.add(other_wine,fill_value=0)
 
 #Graph of all the total of all wines sold and average temperature in Finland
 create_two_bar_graph(all_wines.apply(lambda x: x / 1000), finland_temp, x_pos, x_tick_labels=graph_months,
-                     title='All wines total sold and average celcius degrees per month',
-                     y_label='1000000 litres of all wines total sold and average celcius',
-                     a_legend="1000000 litres of all wines total sold", b_legend="Average temperature")
+                     title='All wines total sold and average temperature per month',
+                     #y_label='1000000 litres of all wines total sold and average celcius',
+                     a_legend="1000000 l of all wines total sold", b_legend="Average temperature in " + celsius_string)
 
 #mode, median, better visualization (celcius as a number?), predictions for next year based on old averages
