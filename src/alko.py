@@ -124,10 +124,29 @@ all_wines=all_wines.add(sparkling_wine,fill_value=0)
 all_wines=all_wines.add(rose_wine,fill_value=0)
 all_wines=all_wines.add(other_wine,fill_value=0)
 
-#Graph of all the total of all wines sold and average temperature in Finland
+#Graph of the total of all wines sold and average temperature in Finland
 create_two_bar_graph(all_wines.apply(lambda x: x / 1000), finland_temp, x_pos, x_tick_labels=graph_months,
                      title='All wines total sold and average temperature per month',
                      #y_label='1000000 litres of all wines total sold and average celcius',
-                     a_legend="1000000 l of all wines total sold", b_legend="Average temperature in " + celsius_string)
+                     a_legend="1000000 l of all wines total sold", b_legend="Average temperature in " + celsius_string) 
+
+#Graph of rose wine sold and average temperature in Finland
+create_two_bar_graph(rose_wine.apply(lambda x: x / 10), finland_temp, x_pos, x_tick_labels=graph_months,
+                     title='Rose wines sold and average temperature per month',
+                     #y_label='10000 litres of rose wines sold and average celcius',
+                     a_legend="10000 l of rose wines sold", b_legend="Average temperature in " + celsius_string) 
+
+#Graph of long drinks sold and average temperature in Finland
+create_two_bar_graph(long_drink.apply(lambda x: x / 100), finland_temp, x_pos, x_tick_labels=graph_months,
+                     title='Long drinks sold and average temperature per month',
+                     #y_label='100000 litres of long drinks sold and average celcius',
+                     a_legend="100000 l of long drinks sold", b_legend="Average temperature in " + celsius_string) 
+
+#Graph of non-alcoholic beverages sold and average temperature in Finland
+create_two_bar_graph(non_alcoholic_beverage.apply(lambda x: x / 10), finland_temp, x_pos, x_tick_labels=graph_months,
+                     title='Non-alcoholic beverages sold and average temperature per month',
+                     #y_label='10000 litres of non-alcoholic beverages sold and average celcius',
+                     a_legend="10000 l of non-alcoholic beverages sold", b_legend="Average temperature in " + celsius_string)
+
 
 #mode, median, better visualization (celcius as a number?), predictions for next year based on old averages
