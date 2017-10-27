@@ -19,6 +19,8 @@ We found collecting weather data somewhat challenging because weather data was n
 # The work
 The data was gathered from excel files and visual representations (plots) and parsed into csv files. The csv files were read into pandas dataframes and plotted out with mathlibplot. Finding a good way to visualize the data took suprisingly long because there were so many moving parts that made the graphs rather confusing to read. 
 
+![alt text](https://github.com/JoonasSa/alkodata/blob/master/graphs/withRain.png )
+From this figure is plotted average temperature and overall sales, with rain ammount. 
 -Tähän niitä graafeja ja jotain analyysia niistä jne.
 
 # Results
