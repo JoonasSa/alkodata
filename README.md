@@ -12,10 +12,14 @@ We are trying to find out if there is any correlation between weather, holidays 
 We think it is likely that certain types of beverage sales are seasonal, meaning that weather will have an impact on the sales. Also it seems likely that the consumption of cheaper alcohols e.g. beers doesn’t vary a lot because of external conditions. 
 
 # Analysis and data
-Our data set is from Alko’s public monthly sales data from 03/2013 to 09/2017 and from Finnish Meteorological Institution’s open source weather data. A problem presented itself as Alko’s sales data was given only on a monthly basis. It would have been more useful if we had had data on the daily sales or at least on the weekly sales. Then we would have been able to achieve more accurate results. It would have also helped us to isolate the effect of seasonal holidays like New year's eve and First of May on Alko’s sales. We found collecting weather data somewhat challenging because weather data was not uniformly available to all places in Finland. We gathered our weather data from four cities that had enough data available and that were in different parts of Finland. This made it possible to calculate the average weather for each month in Finland.
+Our data set is from Alko’s public monthly sales data from 03/2013 to 09/2017 and from Finnish Meteorological Institution’s open source weather data. 
+A problem presented itself as Alko’s sales data was given only on a monthly basis. It would have been more useful if we had had data on the daily sales or at least on the weekly sales. Then we would have been able to achieve more accurate results. This would have made it possible for us to isolate the effect of seasonal holidays like New year's eve and First of May on Alko’s sales. 
+We found collecting weather data somewhat challenging because weather data was not uniformly available for all places in Finland. We gathered our weather data from four different cities that had enough data available and that were in different parts of Finland. This made it possible to calculate the approximate average weather for each month in Finland.
 
 # The work
--mitä datalle tehtiin
+The data was gathered from excel files and visual representations (plots) and parsed into csv files. The csv files were read into pandas dataframes and plotted out with mathlibplot. Finding a good way to visualize the data took suprisingly long because there were so enough moving parts to make the graphs easiluy confusing. 
+
+# The Graphs
 
 # Results
 Overall there is seems to be a correlation between overall sales and weather. For some beverages the effects are very obvious and for some the sales are almost constant. For example vodka and other strong spirits sell almost the same amount each month of year. December has a small spike in sales, but that is true for pretty much everything sold in Alko. During certain seasonal holidays (Christmas, New Years, May day, Midsummer day) Alko’s sales are strongly heightened. In summer there is more sales than during the other seasons. This is most likely caused by the increased temperature and/or the summer holiday season. The data points to the summer holidays, because there was little correlation with average temperature and the sales.
