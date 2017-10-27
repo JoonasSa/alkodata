@@ -19,23 +19,25 @@ We found collecting weather data somewhat challenging because weather data was n
 # The work
 The data was gathered from excel files and visual representations (plots) and parsed into csv files. The csv files were read into pandas dataframes and plotted out with mathlibplot. Finding a good way to visualize the data took suprisingly long time because there were so many moving parts that made the graphs rather confusing to read. 
 
-![total](https://github.com/JoonasSa/alkodata/blob/master/graphs/overall.png)
+![<img src="github.com/JoonasSa/alkodata/blob/master/graphs/overall.png">](https://github.com/JoonasSa/alkodata/blob/master/graphs/overall.png)
 
 On this graph we have plotted the average temperature in Finland and overall sales from Alko and the average amount of rain from 03/2013 to 09/2017. There is definately some seasonal changes in the sales. This might point to a correlation between temperature and the sales.
 
-![total with rain](https://github.com/JoonasSa/alkodata/blob/master/graphs/withRain.png)
+![<img src="github.com/JoonasSa/alkodata/blob/master/graphs/withRain.png">](https://github.com/JoonasSa/alkodata/blob/master/graphs/withRain.png)
 
 This is the same graph as above but now from 09/2015 to 09/2017, as we didn't find good rain data for the years before that. We can see that amount of rain doesn't affect Alko's sales at all.
 
-![rose wine](https://github.com/JoonasSa/alkodata/blob/master/graphs/rose.png)
+![<img src="github.com/JoonasSa/alkodata/blob/master/graphs/rose.png">](https://github.com/JoonasSa/alkodata/blob/master/graphs/rose.png)
 Rose wines are good example where the monthly sales are strongly correlated with the monthly temperature. Interestingly the sales increase steadily from 2013 to 2017 which might be due to improved selections in rose wines in Alko. 
 
-![sparkling wine](https://github.com/JoonasSa/alkodata/blob/master/graphs/sparkling.png)
+![<img src="github.com/JoonasSa/alkodata/blob/master/graphs/sparkling.png">](https://github.com/JoonasSa/alkodata/blob/master/graphs/sparkling.png)
 Sparkling wines best show the effect of seasonal holidays on sales. May day and New Years Eve standout strongly from rest of the graph in April and December. There is also correlation between the temperature and sales. Maybe people like to celebrate their holidays with some sparkling wine?
 
-# Results
-Overall there is seems to be a correlation between overall sales and weather. For some beverages the effects are very obvious and for some the sales are almost constant. For example vodka and other strong spirits sell almost the same amount each month of year. December has a small spike in sales, but that is true for pretty much everything sold in Alko. During certain seasonal holidays (Christmas, New Years, May day, Midsummer day) Alko’s sales are strongly heightened. In summer there is more sales than during the other seasons. This is most likely caused by the increased temperature and/or the summer holiday season. The data points to the summer holidays, because there was little correlation with average temperature and the sales.
+![<img src="github.com/JoonasSa/alkodata/blob/master/graphs/vodka.png">](https://github.com/JoonasSa/alkodata/blob/master/graphs/vodka.png)
+Some beverages like strong alcohols are not affected as heavily by the changing of seasons. Again we can see the effect of New Years on the sales but other than that the changes are not very strong. Still we can see somekind of pattern here with the rising temperature.
 
+# Results
+Overall there is seems to be a correlation between overall sales and weather. For some beverages the effects are very obvious and for some the sales are almost constant. During certain seasonal holidays (Christmas, New Years, May day, Midsummer day) Alko’s sales are strongly heightened. In summer there are more sales done than during other seasons. This is most likely caused by the increased temperature and/or the summer vacation season.
 
 # Conclusion
 These results might be useful to corporations that own bars, pubs or restaurants. They could use their sales data and weather forecasts to predict approximately how much beverage sales they are going to have in the future. This information could be used to create discounts for products that are going to sell poorly or to pick the correct “throw-in” products for the night. Also having data on sales beforehand would make it easier to have everything in stock.
