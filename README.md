@@ -20,11 +20,17 @@ We found collecting weather data somewhat challenging because weather data was n
 The data was gathered from excel files and visual representations (plots) and parsed into csv files. The csv files were read into pandas dataframes and plotted out with mathlibplot. Finding a good way to visualize the data took suprisingly long because there were so many moving parts that made the graphs rather confusing to read. 
 
 ![alt text](https://github.com/JoonasSa/alkodata/blob/master/graphs/withRain.png )
-From this figure is plotted average temperature and overall sales, with rain ammount. 
--Tähän niitä graafeja ja jotain analyysia niistä jne.
+On this figure is plotted average temperature and overall sales, with rain ammount. We can analyse that ammount of rain doesn't affect Alko's sales, but there is some correlation with temperature and sales.
+
+![alt text](https://github.com/JoonasSa/alkodata/blob/master/graphs/rose.png )
+Rose wines are good example where overall sales is higher and there is also some correlation between temperature and sales. Higher sales (from 2013 to 2017) are probably due to improved selections. 
+
+![alt text](https://github.com/JoonasSa/alkodata/blob/master/graphs/sparkling.png )
+Sparkling wines are best group where we can see effect of seasonal holidays, like  May day or New Years Eve. We can see the effect of these events from spikes from April and December. There is also no correlation between temperature and sales.
 
 # Results
 Overall there is seems to be a correlation between overall sales and weather. For some beverages the effects are very obvious and for some the sales are almost constant. For example vodka and other strong spirits sell almost the same amount each month of year. December has a small spike in sales, but that is true for pretty much everything sold in Alko. During certain seasonal holidays (Christmas, New Years, May day, Midsummer day) Alko’s sales are strongly heightened. In summer there is more sales than during the other seasons. This is most likely caused by the increased temperature and/or the summer holiday season. The data points to the summer holidays, because there was little correlation with average temperature and the sales.
+
 
 # Conclusion
 These results might be useful to corporations that own bars, pubs or restaurants. They could use their sales data and weather forecasts to predict approximately how much beverage sales they are going to have in the future. This information could be used to create discounts for products that are going to sell poorly or to pick the correct “throw-in” products for the night. Also having data on sales beforehand would make it easier to have everything in stock.
