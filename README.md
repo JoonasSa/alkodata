@@ -58,5 +58,5 @@ Some beverages like strong alcohols are not affected as heavily by the changing 
 Overall there is seems to be a correlation between overall sales and weather. For some beverages the effects are very obvious and for some the sales are almost constant. During certain seasonal holidays (Christmas, New Years, May day, Midsummer day) Alko’s sales are strongly heightened. In summer there are more sales done than during other seasons. This is most likely caused by the increased temperature and/or the summer vacation season.
 
 
-# Conclusion
+# Prospects
 These results might be useful to corporations that own bars, pubs or restaurants. They could use their sales data and weather forecasts to predict approximately how much beverage sales they are going to have in the future. This information could be used to create discounts for products that are going to sell poorly or to pick the correct “throw-in” products for the night. Also having data on sales beforehand would make it easier to have everything in stock.
