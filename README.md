@@ -3,7 +3,7 @@ Alko's monthly sales and weather in Finland
 
 
 ## The research idea
-We are trying to find out if there is any correlation between weather, holidays and Alko’s alcohol sales. If such a correlation exists we will try to predict next years sales.
+We are trying to find out if there is any correlation between weather, holidays and Alko’s alcohol sales.
 
 
 ## Predictions
@@ -17,7 +17,7 @@ We found collecting weather data somewhat challenging because weather data was n
 
 
 ## The work
-The data was gathered from excel files and visual representations (plots) and parsed into csv files. The csv files were read into pandas dataframes and plotted out with mathlibplot. Finding a good way to visualize the data took suprisingly long time because there were so many moving parts that made the graphs rather confusing to read. 
+The data was gathered from excel files and visual representations (plots) and parsed into csv files. The csv files were read into pandas dataframes, manipulated and plotted out with mathlibplot. Finding a good way to visualize the data took suprisingly long time because there were so many moving parts that made the graphs rather confusing to read. 
 
 
 ![overall](/images/overall.png)
@@ -35,7 +35,7 @@ This is the same graph as above but now from 09/2015 to 09/2017, as we didn't fi
 ![rose wine](/images/rose.png)
 
 
-Rose wines are good example where the monthly sales are strongly correlated with the monthly temperature. Interestingly the sales increase steadily from 2013 to 2017 which might be due to improved selections in rose wines in Alko. 
+Rose wines are good example where the monthly sales are strongly correlated with the monthly temperature. Interestingly the sales increase steadily from 2013 to 2017 which might be due to improved selections of rose wines in Alko. 
 
 
 ![sparkling wine](/images/sparkling.png)
@@ -51,7 +51,7 @@ Some beverages like strong alcohols are not affected as heavily by the changing 
 
 
 ## Results
-Overall there is seems to be a correlation between overall sales and weather. For some beverages the effects are very obvious and for some the sales are almost constant. During certain seasonal holidays (Christmas, New Years, May day, Midsummer day) Alko’s sales are strongly heightened. In summer there are more sales done than during other seasons. This is most likely caused by the increased temperature and/or the summer vacation season.
+Overall there seems to be a correlation between overall sales and weather. For some beverages the effects are very obvious and for some the sales are almost constant. During certain seasonal holidays (Christmas, New Years, May day, Midsummer day) Alko’s sales are strongly heightened. In summer there are more sales made than during other seasons. This is most likely caused by the increased temperature and/or the summer vacation season.
 
 
 ## Prospects
