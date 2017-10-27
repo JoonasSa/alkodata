@@ -1,22 +1,22 @@
-## Alko's monthly sales and weather in Finland
+Alko's monthly sales and weather in Finland
+======
 
 
-
-# The research idea
+## The research idea
 We are trying to find out if there is any correlation between weather, holidays and Alko’s alcohol sales. If such a correlation exists we will try to predict next years sales.
 
 
-# Predictions
+## Predictions
 We think it is likely that certain types of beverage sales are seasonal, meaning that weather will have an impact on the sales. Also it seems likely that the consumption of cheaper alcohols e.g. beers doesn’t vary a lot because of external conditions. 
 
 
-# Analysis and data
+## Analysis and data
 Our data set is from Alko’s public monthly sales data from 03/2013 to 09/2017 and from Finnish Meteorological Institution’s open source weather data. 
 A problem presented itself as Alko’s sales data was given only on a monthly basis. It would have been more useful if we had had data on the daily sales or at least on the weekly sales. Then we would have been able to achieve more accurate results. This would have made it possible for us to isolate the effect of seasonal holidays like New year's eve and First of May on Alko’s sales. 
 We found collecting weather data somewhat challenging because weather data was not uniformly available for all places in Finland. We gathered our weather data from four different cities that had enough data available and that were in different parts of Finland. This made it possible to calculate the approximate average weather for each month in Finland.
 
 
-# The work
+## The work
 The data was gathered from excel files and visual representations (plots) and parsed into csv files. The csv files were read into pandas dataframes and plotted out with mathlibplot. Finding a good way to visualize the data took suprisingly long time because there were so many moving parts that made the graphs rather confusing to read. 
 
 
@@ -50,9 +50,9 @@ Sparkling wines best show the effect of seasonal holidays on sales. May day and 
 Some beverages like strong alcohols are not affected as heavily by the changing of seasons. Again we can see the effect of New Years on the sales but other than that the changes are not very strong. Still we can see somekind of pattern here with the rising temperature.
 
 
-# Results
+## Results
 Overall there is seems to be a correlation between overall sales and weather. For some beverages the effects are very obvious and for some the sales are almost constant. During certain seasonal holidays (Christmas, New Years, May day, Midsummer day) Alko’s sales are strongly heightened. In summer there are more sales done than during other seasons. This is most likely caused by the increased temperature and/or the summer vacation season.
 
 
-# Prospects
+## Prospects
 These results might be useful to corporations that own bars, pubs or restaurants. They could use their sales data and weather forecasts to predict approximately how much beverage sales they are going to have in the future. This information could be used to create discounts for products that are going to sell poorly or to pick the correct “throw-in” products for the night. Also having data on sales beforehand would make it easier to have everything in stock.
