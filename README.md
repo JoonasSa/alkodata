@@ -19,13 +19,18 @@ We found collecting weather data somewhat challenging because weather data was n
 # The work
 The data was gathered from excel files and visual representations (plots) and parsed into csv files. The csv files were read into pandas dataframes and plotted out with mathlibplot. Finding a good way to visualize the data took suprisingly long time because there were so many moving parts that made the graphs rather confusing to read. 
 
-![total with rain](https://github.com/JoonasSa/alkodata/blob/master/graphs/withRain.png )
-On this figure we have plotted the average temperature in Finland, overall sales from Alko and the average amount of rain. We can see that ammount of rain doesn't affect Alko's sales, but there is some correlation with the temperature and the sales.
+![total](https://github.com/JoonasSa/alkodata/blob/master/graphs/overall.png)
 
-![rose wine](https://github.com/JoonasSa/alkodata/blob/master/graphs/rose.png )
+On this graph we have plotted the average temperature in Finland and overall sales from Alko and the average amount of rain from 03/2013 to 09/2017. There is definately some seasonal changes in the sales. This might point to a correlation between temperature and the sales.
+
+![total with rain](https://github.com/JoonasSa/alkodata/blob/master/graphs/withRain.png)
+
+This is the same graph as above but now from 09/2015 to 09/2017, as we didn't find good rain data for the years before that. We can see that amount of rain doesn't affect Alko's sales at all.
+
+![rose wine](https://github.com/JoonasSa/alkodata/blob/master/graphs/rose.png)
 Rose wines are good example where the monthly sales are strongly correlated with the monthly temperature. Interestingly the sales increase steadily from 2013 to 2017 which might be due to improved selections in rose wines in Alko. 
 
-![sparkling wine](https://github.com/JoonasSa/alkodata/blob/master/graphs/sparkling.png )
+![sparkling wine](https://github.com/JoonasSa/alkodata/blob/master/graphs/sparkling.png)
 Sparkling wines best show the effect of seasonal holidays on sales. May day and New Years Eve standout strongly from rest of the graph in April and December. There is also correlation between the temperature and sales. Maybe people like to celebrate their holidays with some sparkling wine?
 
 # Results
